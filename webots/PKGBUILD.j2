@@ -29,9 +29,6 @@ package(){
 	cd "${pkgdir}"
 
 	mkdir usr/bin 2> /dev/null; mv usr/local/bin/* usr/bin; rm -rf usr/local/bin
-	#ls usr/share/applications/*.desktop | while read line; do
-	#sed -i s'^\/Exec=\/usr\/local\/bin/\/Exec=\/usr\/bin//g'
-	#done
 
 	cd ..
 
