@@ -1,14 +1,24 @@
 packages:
   - name: webots
-    github_repo: cyberbotics/webots
     rel: 2
     template: webots
-    source_regex: "^webots_([A-Za-z0-9-]+)_amd64.deb$"
-    version_regex: "R(.*)"
+    source: 'arch_nemesis.sources.GitHubAssetSource'
+    source_config:
+      version_regex: "R(.*)"
+      github_repo: cyberbotics/webots
+      source_regex: "^webots_([A-Za-z0-9-]+)_amd64.deb$"
   - name: webots-nightly
-    github_repo: cyberbotics/webots
-    allow_prereleases: true
     template: webots
-    source_regex: "webots_([A-Za-z0-9-]+)_amd64.deb"
-    version_regex: "nightly_([0-9]{1,2})_([0-9]{1,2})_([0-9]{4})"
-    version_group_order: [2, 1, 0]
+    source: 'arch_nemesis.sources.GitHubAssetSource'
+    source_config:
+      github_repo: cyberbotics/webots
+      allow_prereleases: true
+      source_regex: "webots_([A-Za-z0-9-]+)_amd64.deb"
+      version_regex: "nightly_([0-9]{1,2})_([0-9]{1,2})_([0-9]{4})"
+      version_group_order: [2, 1, 0]
+  - name: python-pyquaternion
+    template: pyquaternion
+    source: 'arch_nemesis.sources.GitHubTarSource'
+    source_config:
+      github_repo: KieranWynn/pyquaternion
+      version_regex: "v(.*)"
