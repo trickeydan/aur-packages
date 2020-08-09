@@ -32,7 +32,7 @@ packages:
     template: sbot
     source: 'arch_nemesis.sources.GitHubTarSource'
     source_config:
-      github_repo: sourcebots/sbota
+      github_repo: sourcebots/sbot
       version_regex: "v(.*)"
   - name: python-zoloto
     template: zoloto
