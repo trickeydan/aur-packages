@@ -22,3 +22,9 @@ packages:
     source_config:
       github_repo: KieranWynn/pyquaternion
       version_regex: "v(.*)"
+  - name: python-j5
+    template: j5
+    source: 'arch_nemesis.sources.GitHubTarSource'
+    source_config:
+      github_repo: j5api/j5
+      version_regex: "v(.*)"
