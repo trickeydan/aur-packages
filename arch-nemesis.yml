@@ -1,48 +1,54 @@
 packages:
   - name: webots
-    rel: 2
     template: webots
-    source: 'arch_nemesis.sources.GitHubAssetSource'
-    source_config:
-      version_regex: "R(.*)"
-      github_repo: cyberbotics/webots
-      source_regex: "^webots_([A-Za-z0-9-]+)_amd64.deb$"
+    sources:
+      - strategy: 'arch_nemesis.sources.GitHubAssetSource'
+        config:
+          version_regex: "R(.*)"
+          github_repo: cyberbotics/webots
+          source_regex: "^webots_([A-Za-z0-9-]+)_amd64.deb$"
   - name: webots-nightly
     template: webots
-    source: 'arch_nemesis.sources.GitHubAssetSource'
-    source_config:
-      github_repo: cyberbotics/webots
-      allow_prereleases: true
-      source_regex: "webots_([A-Za-z0-9-]+)_amd64.deb"
-      version_regex: "nightly_([0-9]{1,2})_([0-9]{1,2})_([0-9]{4})"
-      version_group_order: [2, 1, 0]
+    sources:
+      - strategy: 'arch_nemesis.sources.GitHubAssetSource'
+        config:
+          github_repo: cyberbotics/webots
+          allow_prereleases: true
+          source_regex: "webots_([A-Za-z0-9-]+)_amd64.deb"
+          version_regex: "nightly_([0-9]{1,2})_([0-9]{1,2})_([0-9]{4})"
+          version_group_order: [2, 1, 0]
   - name: python-pyquaternion
     template: pyquaternion
-    source: 'arch_nemesis.sources.GitHubTarSource'
-    source_config:
-      github_repo: KieranWynn/pyquaternion
-      version_regex: "v(.*)"
+    sources:
+      - strategy: 'arch_nemesis.sources.GitHubTarSource'
+        config:
+          github_repo: KieranWynn/pyquaternion
+          version_regex: "v(.*)"
   - name: python-damm32
     template: damm32
-    source: 'arch_nemesis.sources.GitHubTarSource'
-    source_config:
-      github_repo: trickeydan/damm32
-      version_regex: "v(.*)"
+    sources:
+      - strategy: 'arch_nemesis.sources.GitHubTarSource'
+        config:
+          github_repo: trickeydan/damm32
+          version_regex: "v(.*)"
   - name: python-j5
     template: j5
-    source: 'arch_nemesis.sources.GitHubTarSource'
-    source_config:
-      github_repo: j5api/j5
-      version_regex: "v(.*)"
+    sources:
+      - strategy: 'arch_nemesis.sources.GitHubTarSource'
+        config:
+          github_repo: j5api/j5
+          version_regex: "v(.*)"
   - name: python-sbot
     template: sbot
-    source: 'arch_nemesis.sources.GitHubTarSource'
-    source_config:
-      github_repo: sourcebots/sbot
-      version_regex: "v(.*)"
-  - name: python-zoloto
-    template: zoloto
-    source: 'arch_nemesis.sources.GitHubTarSource'
-    source_config:
-      github_repo: RealOrangeOne/zoloto
-      version_regex: "(.*)"
+    sources:
+      - strategy: 'arch_nemesis.sources.GitHubTarSource'
+        config:
+          github_repo: sourcebots/sbot
+          version_regex: "v(.*)"
+  # - name: python-zoloto
+  #   template: zoloto
+  #   sources:
+  #     - strategy: 'arch_nemesis.sources.GitHubTarSource'
+  #       config:
+  #         github_repo: RealOrangeOne/zoloto
+  #         version_regex: "(.*)"
