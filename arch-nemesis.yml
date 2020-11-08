@@ -1,4 +1,12 @@
 packages:
+  - name: arch-nemesis
+    template: arch-nemesis
+    sources:
+      - strategy: 'arch_nemesis.sources.GitHubTarSource'
+        config:
+          github_repo: trickeydan/arch-nemesis
+          allow_prereleases: true
+          version_regex: "v(.*)"
   - name: webots
     template: webots
     sources:
